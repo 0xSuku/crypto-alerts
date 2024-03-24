@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node-dev --respawn ./src/index.ts",
-    "start": "ts-node ./src/index.ts"
+    "start": "ts-node ./src/index.ts",
+    "pm2": "NODE_ENV=production pm2 start ./src/index.ts --watch"
   },
   "keywords": [],
   "author": "",
