@@ -7,7 +7,7 @@
     "build": "tsc",
     "dev": "ts-node-dev --respawn ./src/index.ts",
     "start": "ts-node ./src/index.ts",
-    "pm2": "NODE_ENV=production pm2 start ./src/index.ts --watch"
+    "pm2": "pm2 start ./src/index.ts --watch --restart-delay=60000 --name crypto-alerts"
   },
   "keywords": [],
   "author": "",
