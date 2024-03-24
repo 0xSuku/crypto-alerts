@@ -10,6 +10,11 @@ export async function indigoAlert(
   collateralValue: number,
   mintedAmount: number
 ) {
+  if (chatId_URGENT === "") {
+    console.log("No chat ID found in .env.ENV_TELEGRAM_CHATID_URGENT");
+    return;
+  }
+  
   await bot.telegram.sendMessage(
     chatId_URGENT,
     `[Indigo]\n\n* CDP: ${outputHash}\n* Asset: ${asset}\n* Ratio: ${collateralRatio.toFixed(
