@@ -33,10 +33,10 @@ export async function checkCollateralPercentages() {
       const collateralRatio = (collateralValue / mintedAmount) * 100;
 
       if (collateralRatio < 130) {
-        console.log(`Collateral ratio for CDP ${cdp.output_hash} is BELOW 130%: ${collateralRatio.toFixed(2)}%`);
-        indigoAlert(cdp.output_hash, cdp.asset, collateralRatio, collateralValue, mintedAmount);
+        console.log(`Collateral ratio for CDP (${cdp.asset}) ${cdp.output_hash} is BELOW 130%: ${collateralRatio.toFixed(2)}%`);
+        await indigoAlert(cdp.output_hash, cdp.asset, collateralRatio, collateralValue, mintedAmount);
       } else {
-        console.log(`Collateral ratio for CDP ${cdp.output_hash} is above 130%: ${collateralRatio.toFixed(2)}%`);
+        console.log(`Collateral ratio for CDP (${cdp.asset}) ${cdp.output_hash} is above 130%: ${collateralRatio.toFixed(2)}%`);
       }
     }
   } catch (error) {
